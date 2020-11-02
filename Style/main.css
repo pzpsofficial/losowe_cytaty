@@ -59,6 +59,7 @@ body section .content {
 body section .content__btn {
   -webkit-transition: .5s all ease-in-out;
   transition: .5s all ease-in-out;
+  outline: none;
   border: none;
   padding: 1rem 2rem;
   border-bottom-right-radius: 50px;
@@ -69,6 +70,7 @@ body section .content__btn {
 }
 
 body section .content__btn:hover {
+  cursor: pointer;
   border-bottom-right-radius: 30px;
   border-top-left-radius: 30px;
 }
