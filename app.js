@@ -45,12 +45,29 @@ const base = [
     }
 ];
 
-document.addEventListener('DOMContentLoaded', pickQoute);
+const indexes = [];
+
+document.addEventListener('DOMContentLoaded', () => {
+    fillIndexes();
+    pickQoute();
+});
 btn.addEventListener('click', pickQoute);
 
 function pickQoute() {
-    let qouteIndex = Math.floor(Math.random() * base.length);
-    
-    cytat.textContent = base[qouteIndex].content;
-    autor.textContent = base[qouteIndex].autor;
-};
+    if (indexes.length === 0) {
+        fillIndexes();
+        pickQoute();
+    } else {
+        let qouteIndex = Math.floor(Math.random() * indexes.length);
+        let finalIndex = indexes[qouteIndex];
+        indexes.splice(qouteIndex, 1);
+        cytat.textContent = base[finalIndex].content;
+        autor.textContent = base[finalIndex].autor;
+    }
+}
+
+function fillIndexes() {
+    for (let i = 0; i < base.length; i++) {
+        indexes.push(i);
+    }
+}
