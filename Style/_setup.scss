@@ -1,7 +1,12 @@
-$background1: #99a8b2;
-$text: #1c2b2d;
-$background2: #e6d5b8;
-$secondary: #1f6f8b;
+$background1: #C6AC8F;
+$text: #EAE0D5;
+$background2: #5E503F;
+$secondary: #22333B;
+
+html {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
 
 * {
     padding: 0;
@@ -9,3 +14,13 @@ $secondary: #1f6f8b;
     box-sizing: border-box;
 } 
 
+@mixin flex_center($direction, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: $justify;    
+}
+
+@mixin transition {
+    transition: .5s all ease-in-out;
+}

@@ -1,1 +1,62 @@
 @import 'setup';
+
+body {
+    color: $text;
+    background: $background1;
+    min-height: 100vh;
+    @include flex_center(column, center);
+
+    section {
+        border-bottom-right-radius: 50px;
+        border-top-left-radius: 50px;
+        background: $background2;
+        padding: 3rem;
+        width: 450px;
+        height: 450px;
+    
+        .content {
+            height: 100%;
+            @include flex_center(column, space-between);
+            position: relative;
+
+            &__btn {
+                @include transition;
+                border: none;
+                padding: 1rem 2rem;
+                border-bottom-right-radius: 50px;
+                border-top-left-radius: 50px;
+                background-color: $secondary;
+                color: $text;
+                font-size: 1rem;
+                &:hover {
+                    border-bottom-right-radius: 30px;
+                    border-top-left-radius: 30px;
+                }
+            }
+
+            &__icon {
+                position: absolute;
+                color: $secondary;
+                top: 7rem;
+                left: 2rem;
+            }
+
+            &__cytat {
+                font-size: 1.3rem;
+                z-index: 2;
+            }
+
+            &__autor {
+                font-size: 1.1rem;
+                font-style: italic;
+                color: $secondary;
+                font-weight: 600;
+                align-self: flex-end;
+                justify-self: flex-end;
+            }
+
+        }
+
+    }
+
+}
